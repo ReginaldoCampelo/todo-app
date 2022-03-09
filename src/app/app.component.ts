@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'tda-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-app';
+
+  form: FormGroup = new FormGroup({
+    description : new FormControl('')
+  })
+
+  submit(){
+    console.log(this.form.value)
+  }
 }
