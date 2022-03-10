@@ -12,10 +12,16 @@
       <div class="row">
         <div class="col-md-6">
           <input type="text" class="form-control" formControlName="description" placeholder="Digite sua tarefa aqui">
+          <div class="text-danger" *ngIf="form.get('description').invalid && form.get('description').touched">
+            <div *ngIf="form.get('description').errors.required">dado obrigatório</div>     
+            <div *ngIf="form.get('description').errors.minlength">deve ter no minímo 4 caracteres</div>     
+          </div>
         </div>
 
+ 
+
         <div class="col-md-2">
-          <button type="submit" class="btn btn-outline-primary btn-md">
+          <button [disabled]="!form.get('description').valid" type="submit" class="btn btn-outline-primary btn-md mt-2">
             <i class="fas fa-share"></i>
           </button>
         </div>
@@ -26,7 +32,7 @@
         <ul class="list-group">
           <li *ngFor="let todo of todos"
           class="list-group-item d-flex justify-content-between align-items-center">
-            <span class="{{ todo.done ? 'done' : '' }}"><h5>{{ todo.description }}</h5></span>
+            <span class="{{ todo.done ? 'done' : '' }}"><h5>{{ todo.description }} <span class="dateDone">{{ todo.doneDate | date: 'dd/MM/yyyy h:mm'}}</span></h5></span>
             <div class="btn-group">
               <button class="btn btn-outline-success" [disabled]="todo.done" (click)="done(todo)">
                 <i class="far fa-check-circle"></i>
