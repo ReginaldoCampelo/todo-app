@@ -22,13 +22,13 @@
       </div>
     </form>
     <div class="row">
-      <div class="col-md-7">
+      <div class="col-md-8">
         <ul class="list-group">
           <li *ngFor="let todo of todos"
           class="list-group-item d-flex justify-content-between align-items-center">
-            <h5>{{ todo.description }}</h5>
+            <span class="{{ todo.done ? 'done' : '' }}"><h5>{{ todo.description }}</h5></span>
             <div class="btn-group">
-              <button class="btn btn-outline-success">
+              <button class="btn btn-outline-success" [disabled]="todo.done" (click)="done(todo)">
                 <i class="far fa-check-circle"></i>
               </button>
               <button class="btn btn-outline-danger" (click)="delete(todo)">

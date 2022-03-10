@@ -1,0 +1,5 @@
+.done {
+    font-style: italic;
+    color: darkgrey;
+    text-decoration: line-through;
+}
