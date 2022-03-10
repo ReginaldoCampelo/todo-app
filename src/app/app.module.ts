@@ -7,18 +7,21 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TitleHeaderComponent } from './components/title-header/title-header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { FontAewsomeComponent } from "./components/font-aewsome/font-aewsome.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TitleHeaderComponent
+    TitleHeaderComponent,
+    FontAewsomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

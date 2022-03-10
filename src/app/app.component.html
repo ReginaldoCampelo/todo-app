@@ -1,3 +1,4 @@
+<tda-font-aewsome></tda-font-aewsome>
 <tda-navbar></tda-navbar>
 
 <section class="container d-flex align-items-center justify-content-center">
@@ -7,16 +8,36 @@
       <tda-title-header></tda-title-header>
       <hr>
     </div>
-    <form [formGroup]="form" (ngSubmit)="submit()">
-    <div class="row">
-      <div class="col-md-6">
-        <input type="text" class="form-control" formControlName="description">
-      </div>
+    <form class="mb-2" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" formControlName="description" placeholder="Digite sua tarefa aqui">
+        </div>
 
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-outline-primary btn-lg">Add</button>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-outline-primary btn-md">
+            <i class="fas fa-share"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-md-7">
+        <ul class="list-group">
+          <li *ngFor="let todo of todos"
+          class="list-group-item d-flex justify-content-between align-items-center">
+            <h5>{{ todo.description }}</h5>
+            <div class="btn-group">
+              <button class="btn btn-outline-success">
+                <i class="far fa-check-circle"></i>
+              </button>
+              <button class="btn btn-outline-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-    </form>
   </div>
 </section>
