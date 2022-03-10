@@ -8,13 +8,15 @@ import { TitleHeaderComponent } from './components/title-header/title-header.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { FontAewsomeComponent } from "./components/font-aewsome/font-aewsome.component";
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     TitleHeaderComponent,
-    FontAewsomeComponent
+    FontAewsomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
