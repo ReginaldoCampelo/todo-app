@@ -32,7 +32,7 @@
         <ul class="list-group">
           <li *ngFor="let todo of todos"
           class="list-group-item d-flex justify-content-between align-items-center">
-            <span class="{{ todo.done ? 'done' : '' }}"><h5>{{ todo.description }} <span class="dateDone">{{ todo.doneDate | date: 'dd/MM/yyyy h:mm'}}</span></h5></span>
+            <span class="{{ todo.done ? 'done' : '' }}"><h5>{{ todo.description }} <span class="dateDone">{{ todo.doneDate | date: 'dd/MM/yyyy HH:mm'}}</span></h5></span>
             <div class="btn-group">
               <button class="btn btn-outline-success" [disabled]="todo.done" (click)="done(todo)">
                 <i class="far fa-check-circle"></i>
